@@ -55,7 +55,7 @@ class PostController extends AbstractController
             $posts = $this->postRepository->findBy(['user' => $user]);
         }
         $postsJson = $this->serializer->serialize($posts,'json',['groups' => 'post_read']);
-        // Génération de la réponse
+        // Génération de la réponse au format JSON
         $response = new Response();
         $response->setStatusCode(200,"OK");
         $response->headers->set("content-type","application/json");

@@ -14,7 +14,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
 {
     public function load(ObjectManager $manager)
     {
-        $faker = Factory::create("fr_FR");
+      $faker = Factory::create("fr_FR");
 
         for ($i=1; $i <= 50; $i++) {
             $post = new Post();
@@ -27,10 +27,12 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
         }
 
         $manager->flush();
+
     }
 
     public function getDependencies()
     {
         return array(UserFixtures::class);
     }
+
 }
